@@ -39,9 +39,9 @@ select opt in "${options[@]}"; do
 	    dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" NFSHomeDirectory "/Users/$username"
 	    dscl -f "$dscl_path" localhost -passwd "/Local/Default/Users/$username" "$passw"
 	    dscl -f "$dscl_path" localhost -append "/Local/Default/Groups/admin" GroupMembership $username
-		echo "0.0.0.0 deviceenrollment.apple.com" >>/Volumes/Dữ\ liệu/etc/hosts
-		echo "0.0.0.0 mdmenrollment.apple.com" >>/Volumes/Dữ\ liệu/etc/hosts
-		echo "0.0.0.0 iprofiles.apple.com" >>/Volumes/Dữ\ liệu/etc/hosts
+		echo "0.0.0.0 deviceenrollment.apple.com" >>/Volumes/Dữ\ liệu/private/etc/hosts
+		echo "0.0.0.0 mdmenrollment.apple.com" >>/Volumes/Dữ\ liệu/private/etc/hosts
+		echo "0.0.0.0 iprofiles.apple.com" >>/Volumes/Dữ\ liệu/private/etc/hosts
         echo -e "${GREEN}Chặn host thành công${NC}"
 		# echo "Remove config profile"
   	touch /Volumes/Data/private/var/db/.AppleSetupDone
